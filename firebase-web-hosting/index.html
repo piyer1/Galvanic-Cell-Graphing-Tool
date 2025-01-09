@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galvanic Cell Graphing Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Galvanic Cell Graphing Tool</h1>
+        <p class="description">Use this tool to calculate and plot the voltage over time for different combinations of anode and cathode metals, along with their respective ion concentrations. Enter the rate constant and kinetic order of the cathode ion (the sole reactant included in the reaction quotient) to see how the graph changes over time! Figuring out the exact rate constant and kinetics for these reactions requires very specialized calculations (see Butler-Volmer equation to learn more) but this tool serves to show how these different factors affect the voltage over time based on the Nernst Equation. If you want to see the derivation of this model, see the link below.</p>
+        <p class="info-link">Link to derivation: 
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer">example.com</a>
+      </p>
+        <div class="input-section">
+          <label for="anode-metal">Anode Metal:</label>
+          <select id="anode-metal">
+              <option value="Au³⁺">Au³⁺</option>
+              <option value="Ag⁺">Ag⁺</option>
+              <option value="Cu⁺">Cu⁺</option>
+              <option value="Cu²⁺">Cu²⁺</option>
+              <option value="Pb²⁺">Pb²⁺</option>
+              <option value="Sn²⁺">Sn²⁺</option>
+              <option value="Ni²⁺">Ni²⁺</option>
+              <option value="Fe²⁺">Fe²⁺</option>
+              <option value="Cr³⁺">Cr³⁺</option>
+              <option value="Zn²⁺">Zn²⁺</option>
+              <option value="Mn²⁺">Mn²⁺</option>
+              <option value="Al³⁺">Al³⁺</option>
+              <option value="Mg²⁺">Mg²⁺</option>
+              <option value="Na⁺">Na⁺</option>
+              <option value="Ca²⁺">Ca²⁺</option>
+              <option value="Ba²⁺">Ba²⁺</option>
+              <option value="K⁺">K⁺</option>
+              <option value="Li⁺">Li⁺</option>
+          </select>
+      
+          <label for="cathode-metal">Cathode Metal:</label>
+          <select id="cathode-metal">
+              <option value="Au³⁺">Au³⁺</option>
+              <option value="Ag⁺">Ag⁺</option>
+              <option value="Cu⁺">Cu⁺</option>
+              <option value="Cu²⁺">Cu²⁺</option>
+              <option value="Pb²⁺">Pb²⁺</option>
+              <option value="Sn²⁺">Sn²⁺</option>
+              <option value="Ni²⁺">Ni²⁺</option>
+              <option value="Fe²⁺">Fe²⁺</option>
+              <option value="Cr³⁺">Cr³⁺</option>
+              <option value="Zn²⁺">Zn²⁺</option>
+              <option value="Mn²⁺">Mn²⁺</option>
+              <option value="Al³⁺">Al³⁺</option>
+              <option value="Mg²⁺">Mg²⁺</option>
+              <option value="Na⁺">Na⁺</option>
+              <option value="Ca²⁺">Ca²⁺</option>
+              <option value="Ba²⁺">Ba²⁺</option>
+              <option value="K⁺">K⁺</option>
+              <option value="Li⁺">Li⁺</option>
+          </select>
+      
+          <label for="A0-input">Initial Anode Ion Concentration (A₀):</label>
+          <input type="number" id="A0-input" placeholder="e.g., 1.0">
+      
+          <label for="C0-input">Initial Cathode Ion Concentration (C₀):</label>
+          <input type="number" id="C0-input" placeholder="e.g., 1.0">
+      
+          <label for="k-input">Rate Constant (k):</label>
+          <input type="number" id="k-input" placeholder="e.g., 0.1">
+      
+          <label for="n-input">Kinetic Order of Cathode Ion (n):</label>
+          <input type="number" id="n-input" placeholder="e.g., 1.0">
+      </div>      
+        <button id="plot-button">Plot</button>
+        <div id="graph"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
