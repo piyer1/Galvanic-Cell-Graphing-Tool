@@ -187,8 +187,8 @@ document.getElementById("plot-button").addEventListener("click", () => {
 
         const layout = {
             title: `Graph of Voltage over Time based on Reactant Kinetic Order`,
-            xaxis: { title: 't', range: tRange },
-            yaxis: { title: 'V' },
+            xaxis: { title: 'Time (hrs)', range: tRange },
+            yaxis: { title: 'Potential (V)' },
         };
 
         Plotly.newPlot('graph', [trace], layout);
