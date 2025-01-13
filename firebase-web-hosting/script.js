@@ -110,11 +110,14 @@ document.getElementById("plot-button").addEventListener("click", () => {
         if (E < 0){
             throw new Error("This cell is not a galvanic cell, as the overall reaction is not spontaneous. It is an electrolytic cell and would need current to power it.")
         }
+        if (E == 0 && A0 == C0){
+            throw new Error("As the cell has the same anode and cathode materials, and identical concentrations of each, the system is in equilibrium as there is no potential difference to power the circuit. Thus, the reaction will not proceed in either direction.")
+        }
         const a = anode.electrons;
         const c = cathode.electrons;
 
         if ([A0, C0, k, n].some(isNaN)) {
-            throw new Error("All parameters (A₀, C₀, k, n) must be provided and valid numbers.");
+            throw new Error("All parameters must be provided and valid numbers.");
         }
 
         function gcd(a, b) { 
